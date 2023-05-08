@@ -1,0 +1,10 @@
+Put your credentials in a creds.sh, like this:
+
+LOGIN='<your login>'
+PASSWORD='<your password>'
+PASSN='<your pass number>'
+
+bash run.sh
+
+This will download all salaries bulletins as Salaire-YYYY-MM.pdf
+
