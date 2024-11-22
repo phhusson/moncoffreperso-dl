@@ -20,7 +20,7 @@ curYear="$(date -d '1 week ago' +%Y)"
 # Check whether we're already logged
 # Is there a login_form when trying to access bulletins?
 if curl -b cookies https://www.moncoffreperso.com/documents/bulletin-de-salaire/$curYear -L | pup 'div.login_form' | grep -qE .;then
-    curl -b cookies -X POST -d "$LOGIN" -dcf_password="$PASSWORD" -dcf_passNumber="$PASSN" -dcf_connect=Connexion https://www.moncoffreperso.com/login -L
+    curl -b cookies -X POST -dcf_login="$LOGIN" -dcf_password="$PASSWORD" -dcf_passNumber="$PASSN" -dcf_connect=Connexion https://www.moncoffreperso.com/login -L
     # This always returns to a 404, I don't know why. And it makes checking whether login succeeded or not annoying
 fi
 
